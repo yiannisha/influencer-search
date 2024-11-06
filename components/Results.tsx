@@ -13,13 +13,13 @@ export default function Results(props: ResultsProps) {
     
     useEffect(() => {
         setResults(usernames.slice(0, 5).map(
-            (username, i) => <InstagramEmbed key={i} className="w-2/3" username={username} />
+            (username, i) => <InstagramEmbed key={i} className="w-full md:w-2/3" username={username} />
         ));
     }, [usernames]);
 
     const viewMore = () => {
         results.push(...usernames.slice(5).map(
-            (username, i) => <InstagramEmbed key={i} className="w-2/3" username={username} />
+            (username, i) => <InstagramEmbed key={i} className="w-full md:w-2/3" username={username} />
         ));
         
         // re-render

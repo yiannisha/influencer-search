@@ -8,7 +8,7 @@ export interface SearchProps extends React.HTMLProps<HTMLDivElement> {
 export default function Search(props: SearchProps) {
     
     return (
-        <div className={`w-full ${props.className}`}>
+        <div className={`${props.className}`}>
         <input
             value={props.search}
             onChange={(e) => props.setSearch(e.target.value)}

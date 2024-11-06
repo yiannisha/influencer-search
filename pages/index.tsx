@@ -61,12 +61,8 @@ export default function Home() {
         <title>Uplodio - Influencer Search</title>
       </Head>
       <main className="relative flex flex-col items-center justify-center w-full md:w-3/4 py-12">
-        {/* NAVBAR */}
         <NavBar className="mt-6" search={search} setSearch={setSearch} />
-
-        {/* RESULTS */}
-        <Results className="mt-24 w-2/3" usernames={results} error={error} loading={loading} />
-        {/* <InstagramEmbed username="_thehorsecenter" /> */}
+        <Results className="mt-24 w-full md:w-2/3" usernames={results} error={error} loading={loading} />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
