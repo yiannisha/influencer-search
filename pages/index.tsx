@@ -15,7 +15,7 @@ export default function Home() {
     setError(false);
   
     const body = JSON.stringify({ query: search });
-    const resp = await fetch('https://facebook-rpa-328991909505.us-central1.run.app/search', {
+    const resp = await fetch('/api/search', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,12 @@ export default function Home() {
     }
   
     const data = await resp.json();
-    setResults(data.map((d: { username: string }) => d.username));
+    if (data.error) {
+      setError(true);
+      return;
+    }
+    
+    setResults(data.usernames.map((d: { username: string }) => d.username));
     setTimeout(() => setLoading(false), 2000);
   }, [search]);
 
