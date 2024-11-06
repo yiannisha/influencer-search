@@ -33,8 +33,8 @@ export default function Home() {
       setError(true);
       return;
     }
-    
-    setResults(data.usernames.map((d: { username: string }) => d.username));
+
+    setResults(data.usernames);
     setTimeout(() => setLoading(false), 2000);
   }, [search]);
 
